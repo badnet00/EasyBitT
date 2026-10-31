@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "EasyBitT",
+  "version": "0.1.0",
+  "description": "右键推送磁力链接 / .torrent 到内网 qBittorrent WebUI，推送前可编辑下载目录等参数。",
+  "minimum_chrome_version": "110",
+  "permissions": ["contextMenus", "storage", "notifications"],
+  "host_permissions": ["http://*/*", "https://*/*"],
+  "background": { "service_worker": "background.js" },
+  "action": {
+    "default_title": "EasyBitT 下载进度",
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "options_ui": {
+    "page": "options/options.html",
+    "open_in_tab": true
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

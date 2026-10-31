@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>EasyBitT 下载进度</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <main class="pp">
+    <header class="pp-head">
+      <span class="logo" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg>
+      </span>
+      <div class="t1">下载任务</div>
+      <span class="upd" id="upd"></span>
+      <button type="button" class="icon-btn" id="webui" aria-label="打开 WebUI" title="打开 WebUI">
+        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+      </button>
+      <button type="button" class="icon-btn" id="gear" aria-label="打开设置" title="打开设置">
+        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h0a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51h0a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v0a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      </button>
+    </header>
+    <nav class="tabs" id="tabs" aria-label="任务分类">
+      <button type="button" class="tab" data-tab="all">全部<span class="cnt" id="cnt-all"></span></button>
+      <button type="button" class="tab" data-tab="dl">下载<span class="cnt" id="cnt-dl"></span></button>
+      <button type="button" class="tab" data-tab="seed">做种<span class="cnt" id="cnt-seed"></span></button>
+      <button type="button" class="tab" data-tab="done">完成<span class="cnt" id="cnt-done"></span></button>
+      <button type="button" class="tab" data-tab="paused">暂停<span class="cnt" id="cnt-paused"></span></button>
+    </nav>
+    <div class="pp-body" id="list">
+      <div class="hintcard">加载中…</div>
+    </div>
+  </main>
+  <script src="../lib/qbittorrent.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

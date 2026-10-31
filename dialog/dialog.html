@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>添加下载任务 · EasyBitT</title>
+  <link rel="stylesheet" href="dialog.css">
+</head>
+<body>
+  <main class="dlg">
+    <header class="dlg-head">
+      <span class="logo" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg>
+      </span>
+      <div class="titles">
+        <div class="t1">添加下载任务</div>
+        <div class="t2"><span class="dot" id="target-dot"></span><span id="target-text">读取设置中…</span></div>
+      </div>
+      <span class="type-badge" id="type-badge">—</span>
+    </header>
+
+    <section class="dlg-body">
+      <div class="field">
+        <label for="link">链接</label>
+        <textarea id="link" class="input mono" rows="2" spellcheck="false" placeholder="magnet:?xt=urn:btih:… 或 https://…/file.torrent"></textarea>
+      </div>
+      <div class="field">
+        <label for="dir">下载目录（NAS 上的绝对路径）</label>
+        <div class="ddwrap">
+          <input id="dir" class="input mono" type="text" spellcheck="false" placeholder="/vol1/1000/downloads/">
+          <button type="button" class="chev" id="dir-dd" aria-label="选择最近使用的目录" aria-expanded="false">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="ddpanel" id="dir-panel" hidden></div>
+        </div>
+      </div>
+      <div class="grid2">
+        <div class="field">
+          <label for="cat">分类</label>
+          <div class="ddwrap">
+            <input id="cat" class="input" type="text" spellcheck="false" placeholder="可留空">
+            <button type="button" class="chev" id="cat-dd" aria-label="选择分类" aria-expanded="false">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="ddpanel" id="cat-panel" hidden></div>
+          </div>
+        </div>
+        <div class="field">
+          <label for="start">开始状态</label>
+          <div class="ddwrap">
+            <input id="start" class="input" type="text" readonly>
+            <button type="button" class="chev" id="start-dd" aria-label="选择开始状态" aria-expanded="false">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="ddpanel" id="start-panel" hidden></div>
+          </div>
+        </div>
+      </div>
+      <label class="check"><input type="checkbox" id="remember" checked>记住本次填写为默认</label>
+      <div class="error" id="error" role="alert" hidden>
+        <span id="error-text"></span>
+        <button type="button" class="mini-btn" id="error-settings" hidden>打开设置</button>
+      </div>
+    </section>
+
+    <footer class="dlg-foot">
+      <button type="button" class="btn btn-ghost" id="cancel">取消</button>
+      <button type="button" class="btn btn-primary" id="push">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg>
+        立即推送
+      </button>
+    </footer>
+  </main>
+
+  <script src="../lib/qbittorrent.js"></script>
+  <script src="dialog.js"></script>
+</body>
+</html>
